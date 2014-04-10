@@ -1,7 +1,0 @@
-parameters:
-#    welcome.example.class: Jeruk\WelcomeBundle\Example
-
-services:
-#    welcome.example:
-#        class: %welcome.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]

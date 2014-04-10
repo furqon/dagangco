@@ -1,13 +1,5 @@
-# Bootstrap
-app/bootstrap*
-
-# Symfony directories
-*/logs/*
-*/cache/*
+config/Config.php
+*.log
+*.tar.*
+*.sublime*
 web/uploads/*
-
-# Configuration files
-app/config/parameters.ini
-
-#php storm default
-.idea
