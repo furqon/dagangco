@@ -31,6 +31,6 @@ class LoginApplication extends Application {
       }
     }
 
-    return $this->render(array('form' => $form));
+    return $this->render(array('form' => $form), 'login');
   }
 }
