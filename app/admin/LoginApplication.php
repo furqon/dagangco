@@ -1,10 +1,10 @@
 <?php
 
-namespace frontend;
+namespace admin;
 
 use PetakUmpet\Application;
 use PetakUmpet\Response;
-use frontend\AppUser;
+use admin\AppUser;
 
 class LoginApplication extends Application {
 

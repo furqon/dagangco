@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend;
+namespace backend;
 
 use PetakUmpet\Application;
 

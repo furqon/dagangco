@@ -1,6 +1,6 @@
 <?php
 
-namespace frontend;
+namespace admin;
 
 use PetakUmpet\Application\MasterDataApplication;
 
