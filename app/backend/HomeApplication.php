@@ -8,8 +8,9 @@ class HomeApplication extends Application {
 
   public function indexAction()
   {
+    $test = 'text';
     $this->request->setSubNavMenu(false);
-    return $this->render();
+    return $this->render(array('t' => $test));
   }
 
   public function dashboardAction()
