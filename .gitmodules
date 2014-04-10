@@ -1,0 +1,3 @@
+[submodule "lib/PetakUmpet"]
+	path = lib/PetakUmpet
+	url = https://github.com/ariefmulya/PetakUmpet.git
