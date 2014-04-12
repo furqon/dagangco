@@ -24,7 +24,7 @@ class LoginApplication extends Application {
           $this->session->set('userid', $user->getUserid());
           $this->session->setAuthenticated(true);
           // authenticated, go to index
-          $this->redirect('home');
+          $this->redirect('Home/index');
         }
         // failed login
         $this->session->setFlash('Login failed, please check username or password.');
