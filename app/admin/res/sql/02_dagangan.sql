@@ -46,9 +46,11 @@ CREATE TABLE itemstocking (
   supplierprice integer,
   retailprice integer,
   paymentmethod integer,
+  created_at timestamp,
+  created_by integer,
   PRIMARY KEY (id),  
   FOREIGN KEY (merchant_id) REFERENCES merchantdata (id),
   FOREIGN KEY (item_id) REFERENCES itemdata (id),
-  FOREIGN KEY (createdby) REFERENCES clientdata (id)
+  FOREIGN KEY (created_by) REFERENCES clientdata (id),
   FOREIGN KEY (supplier_id) REFERENCES supplierdata (id)
 );

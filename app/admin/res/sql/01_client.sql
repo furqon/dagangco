@@ -32,10 +32,11 @@ CREATE TABLE client_merchant (
 -- untuk labeling pengirim di paket, have to be wysiwyg
 CREATE TABLE merchantlabel (
   id serial,
+  merchant_id integer,
   name varchar(100),
   content text,
   created_at timestamp,
-  created)by integer,
+  created_by integer,
   PRIMARY KEY (id),  
   FOREIGN KEY (merchant_id) REFERENCES merchantdata (id),
   FOREIGN KEY (created_by) REFERENCES clientdata (id)
@@ -47,7 +48,7 @@ CREATE TABLE merchantaccount (
   account_name varchar(100),
   account_number varchar(100),
   created_at timestamp,
-  created)by integer,
+  created_by integer,
   PRIMARY KEY (id),
   FOREIGN KEY (merchant_id) REFERENCES merchantdata (id),
   FOREIGN KEY (created_by) REFERENCES clientdata (id)
