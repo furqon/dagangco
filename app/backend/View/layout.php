@@ -27,9 +27,8 @@
 
     <!-- header -->
     <header class="header">
-      <a href="index.html" class="logo">        
-        <?php echo $config->getProjectTitle() ?>
-      </a>
+      <?php echo $UI->link($config->getProjectTitle(), 'Home/index', 'logo') ?>
+
             <!-- Header Navbar: style can be found in header.less -->
       <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
@@ -76,9 +75,8 @@
 
 
     <div class="wrapper row-offcanvas row-offcanvas-left">      
-      <?php include("sidebar.php") ?>
-      <?php include("maincontent.php") ?>
-
+      <?php $T->includeFile("Home/sidebar") ?>
+      <?php echo $T->block('content') ?>
     </div>
     <script src="<?php echo $T->getResourceUrl('js/jquery.min.js') ?>"></script>
     <script src="<?php echo $T->getResourceUrl('js/bootstrap.min.js') ?>"></script>
