@@ -60,10 +60,10 @@
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
-                      <?php echo $T->buttonlink('Profile', 'Logout/index', 'btn-flat') ?>
+                      <?php echo $UI->buttonlink('Profile', 'Logout/index', 'btn-flat') ?>
                   </div>
                   <div class="pull-right">
-                      <?php echo $T->buttonlink('Sign out', 'Logout/index', 'btn-flat') ?>
+                      <?php echo $UI->buttonlink('Sign out', 'Logout/index', 'btn-flat') ?>
                   </div>
                 </li>
               </ul>
