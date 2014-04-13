@@ -27,6 +27,9 @@ class RoutingConfig extends RoutingEngine {
       'home' => array(
         self::PAGE => 'Home/index',
       ),
+      'user-noaccess' => array(
+        self::PAGE => 'User/noAccess',
+      ),
       /* if one wants to customize their 404 page, set like this */
       self::ERROR_404_ROUTE => array(
         self::PAGE => 'Error/err404',

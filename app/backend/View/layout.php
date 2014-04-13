@@ -15,6 +15,7 @@
   <link href="<?php echo $T->getResourceUrl('css/font-awesome.min.css') ?>" rel="stylesheet">
   <link href="<?php echo $T->getResourceUrl('css/ionicons.min.css') ?>" rel="stylesheet">
   <link href="<?php echo $T->getResourceUrl('css/AdminLTE.css') ?>" rel="stylesheet">
+  <script src="<?php echo $T->getResourceUrl('js/jquery.min.js') ?>"></script>
   
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
@@ -76,10 +77,10 @@
 
     <div class="wrapper row-offcanvas row-offcanvas-left">      
       <?php $T->includeFile("Home/sidebar") ?>
-      <?php echo $T->block('content') ?>
+      <?php echo $T->ajaxBlock('testBlock', 'Home/index'); ?>
     </div>
-    <script src="<?php echo $T->getResourceUrl('js/jquery.min.js') ?>"></script>
     <script src="<?php echo $T->getResourceUrl('js/bootstrap.min.js') ?>"></script>
     <script src="<?php echo $T->getResourceUrl('js/AdminLTE/app.js') ?>"></script>
+    
   </body>
 </html>
