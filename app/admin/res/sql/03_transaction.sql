@@ -11,3 +11,5 @@ CREATE TABLE transaction (
   FOREIGN KEY (merchant_id) REFERENCES merchantdata (id),
   FOREIGN KEY (created_by) REFERENCES clientdata (id)
 );
+
+-- invoice

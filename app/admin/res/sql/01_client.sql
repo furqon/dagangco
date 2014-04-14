@@ -29,7 +29,7 @@ CREATE TABLE client_merchant (
   FOREIGN KEY (merchant_id) REFERENCES merchantdata (id)
 );
 
--- untuk labeling pengirim di paket, have to be wysiwyg
+-- untuk labeling pengirim di paket, have to be wysiwyg, nice to have
 CREATE TABLE merchantlabel (
   id serial,
   merchant_id integer,

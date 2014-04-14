@@ -24,13 +24,13 @@ class LoginApplication extends Application {
           $this->session->set('userid', $user->getUserid());
           $this->session->setAuthenticated(true);
           // authenticated, go to index
-          $this->redirectToStartPage();
+          $this->redirect('Home/index');
         }
         // failed login
         $this->session->setFlash('Login failed, please check username or password.');
       }
     }
 
-    return $this->render(array('form' => $form));
+    return $this->render(array('form' => $form), 'login');
   }
 }

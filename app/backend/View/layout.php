@@ -77,7 +77,8 @@
 
     <div class="wrapper row-offcanvas row-offcanvas-left">      
       <?php $T->includeFile("Home/sidebar") ?>
-      <?php echo $T->ajaxBlock('testBlock', 'Home/index'); ?>
+      <!-- echo $T->ajaxBlock('testBlock', 'Home/index'); -->
+      <?php echo $T->block('content'); ?>
     </div>
     <script src="<?php echo $T->getResourceUrl('js/bootstrap.min.js') ?>"></script>
     <script src="<?php echo $T->getResourceUrl('js/AdminLTE/app.js') ?>"></script>

@@ -8,13 +8,11 @@ class HomeApplication extends Application {
 
   public function indexAction()
   {
-    $this->request->setSubNavMenu(false);
     return $this->render();
   }
 
-  public function aboutAction()
+  public function dashboardAction()
   {
-    $this->request->setSubNavMenu(false);
     return $this->render();
   }
 }
