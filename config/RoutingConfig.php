@@ -36,6 +36,9 @@ class RoutingConfig extends RoutingEngine {
       'user-noaccess' => array(
         self::PAGE => 'User/noAccess',
       ),
+      'home-source' => array(
+        self::PAGE => 'Home/source',
+      ),
       /* if one wants to customize their 404 page, set like this */
       self::ERROR_404_ROUTE => array(
         self::PAGE => 'Error/err404',
@@ -60,9 +63,6 @@ class RoutingConfig extends RoutingEngine {
       ),
       'user-noaccess' => array(
         self::PAGE => 'User/noAccess',
-      ),
-      'home-source' => array(
-        self::PAGE => 'Home/source',
       ),
       /* if one wants to customize their 404 page, set like this */
       self::ERROR_404_ROUTE => array(
