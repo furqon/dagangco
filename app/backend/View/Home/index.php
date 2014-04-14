@@ -14,13 +14,17 @@
 
     <!-- Main content -->
     <section class="content">
+        <div class="row col-sm-6">
+            <?php echo $dt; ?>
+        </div>
+ 
         <div class="row">
             <div class="col-xs-12">
                 <!-- interactive chart -->
                 <div class="box box-primary">
                     <div class="box-header">
                         <i class="fa fa-bar-chart-o"></i>
-                        <h3 class="box-title">Interactive Area Chart <?php echo $t ?></h3>
+                        <h3 class="box-title">Interactive Area Chart</h3> 
                         <div class="box-tools pull-right">
                             Real time
                             <div class="btn-group" id="realtime" data-toggle="btn-toggle">
@@ -36,9 +40,9 @@
 
             </div><!-- /.col -->
         </div><!-- /.row -->
-
     </section><!-- /.content -->
 
 </aside><!-- /.right-side -->
+
 <?php $T->blockEnd('content') ?>
 
