@@ -19,6 +19,7 @@ CREATE TABLE itemdata (
   merchant_id integer,
   name varchar(100),
   itemtype_id integer,
+  image varchar(100),
   PRIMARY KEY (id),  
   FOREIGN KEY (merchant_id) REFERENCES merchantdata (id),
   FOREIGN KEY (itemtype_id) REFERENCES itemtype (id)

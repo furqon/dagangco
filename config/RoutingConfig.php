@@ -27,6 +27,37 @@ class RoutingConfig extends RoutingEngine {
       'home' => array(
         self::PAGE => 'Home/index',
       ),
+      'dashboard' => array(
+        self::PAGE => 'Home/dashboard',
+      ),
+      'logout' => array(
+        self::PAGE => 'Logout/index',
+      ),
+      'user-noaccess' => array(
+        self::PAGE => 'User/noAccess',
+      ),
+      /* if one wants to customize their 404 page, set like this */
+      self::ERROR_404_ROUTE => array(
+        self::PAGE => 'Error/err404',
+      ),
+    );
+
+    $table['admin'] = array(
+      '/' => array(   /* '/' is default route when nothing else is specified */
+        self::PAGE => 'Login/index',
+      ),
+      'home' => array(
+        self::PAGE => 'Home/index',
+      ),
+      'dashboard' => array(
+        self::PAGE => 'Home/dashboard',
+      ),
+      'configuration' => array(
+        self::PAGE => 'Warung/config',
+      ),
+      'logout' => array(
+        self::PAGE => 'Logout/index',
+      ),
       'user-noaccess' => array(
         self::PAGE => 'User/noAccess',
       ),

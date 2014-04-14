@@ -11,7 +11,7 @@ class HomeApplication extends Application {
     return $this->render();
   }
 
-  public function aboutAction()
+  public function dashboardAction()
   {
     return $this->render();
   }

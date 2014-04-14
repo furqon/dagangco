@@ -25,11 +25,10 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
           <li class="active">
-              <a href="index.html">
-                  <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-              </a>
+            <?php echo $UI->link('Dashboard', 'Home/dashboard', '', 'fa fa-dashboard') ?>
           </li>
           <li>
+            <?php echo $UI->link('Dashboard', 'Home/dashboard', '', 'fa fa-dashboard') ?>
               <a href="pages/widgets.html">
                   <i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>
               </a>
