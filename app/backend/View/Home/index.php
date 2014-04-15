@@ -14,11 +14,18 @@
 
     <!-- Main content -->
     <section class="content">
-        <div class="row col-sm-6">
-            <?php echo $dt; ?>
-        </div>
- 
         <div class="row">
+            <div class="col-md-6">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">User Data</h3> 
+                    </div>
+                    <div class="box-body" >
+                        <?php echo $dt; ?>
+                    </div>
+                </div>
+            </div>
+     
             <div class="col-xs-12">
                 <!-- interactive chart -->
                 <div class="box box-primary">
