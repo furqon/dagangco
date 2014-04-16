@@ -1,3 +1,5 @@
+<?php $T->addJs(array('https://www.google.com/jsapi', 'chart/pie')) ?>
+
 <?php $T->blockStart('content') ?>
 <aside class="right-side">
     <!-- Content Header (Page header) -->
@@ -14,6 +16,86 @@
 
     <!-- Main content -->
     <section class="content">
+        <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-aqua">
+                                <div class="inner">
+                                    <h3>
+                                        150
+                                    </h3>
+                                    <p>
+                                        New Orders
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-green">
+                                <div class="inner">
+                                    <h3>
+                                        53<sup style="font-size: 20px">%</sup>
+                                    </h3>
+                                    <p>
+                                        Bounce Rate
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-stats-bars"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-yellow">
+                                <div class="inner">
+                                    <h3>
+                                        44
+                                    </h3>
+                                    <p>
+                                        User Registrations
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                        <div class="col-lg-3 col-xs-6">
+                            <!-- small box -->
+                            <div class="small-box bg-red">
+                                <div class="inner">
+                                    <h3>
+                                        65
+                                    </h3>
+                                    <p>
+                                        Unique Visitors
+                                    </p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-pie-graph"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">
+                                    More info <i class="fa fa-arrow-circle-right"></i>
+                                </a>
+                            </div>
+                        </div><!-- ./col -->
+                    </div><!-- /.row -->
+                    
         <div class="row">
             <div class="col-md-6">
                 <!-- Line chart -->
@@ -23,18 +105,7 @@
                         <h3 class="box-title">Status penjualan harian</h3>
                     </div>
                     <div class="box-body">
-                        <div id="line-chart" style="height: 300px;"></div>
-                    </div><!-- /.box-body-->
-                </div><!-- /.box -->
-
-                <!-- Area chart -->
-                <div class="box box-primary">
-                    <div class="box-header">
-                        <i class="fa fa-bar-chart-o"></i>
-                        <h3 class="box-title">Profitability</h3>
-                    </div>
-                    <div class="box-body">
-                        <div id="area-chart" style="height: 338px;" class="full-width-chart"></div>
+                        <div id="line-chart" style="height: 300px;"><div id="chart_div" style="width:400; height:300"></div></div>
                     </div><!-- /.box-body-->
                 </div><!-- /.box -->
 
@@ -48,20 +119,10 @@
                         <h3 class="box-title">Item stock</h3>
                     </div>
                     <div class="box-body">
-                        <div id="bar-chart" style="height: 300px;"></div>
+                        <div id="line-chart" style="height: 300px;"><div id="chart_div2" style="width:400; height:300"></div></div>
                     </div><!-- /.box-body-->
                 </div><!-- /.box -->
 
-                <!-- Donut chart -->
-                <div class="box box-primary">
-                    <div class="box-header">
-                        <i class="fa fa-bar-chart-o"></i>
-                        <h3 class="box-title">Donut Chart - item terjual</h3>
-                    </div>
-                    <div class="box-body">
-                        <div id="donut-chart" style="height: 300px;"></div>
-                    </div><!-- /.box-body-->
-                </div><!-- /.box -->
             </div><!-- /.col -->
         </div><!-- /.row -->
 

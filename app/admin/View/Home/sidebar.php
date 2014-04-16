@@ -15,7 +15,7 @@
       <!-- search form -->
       <form action="#" method="get" class="sidebar-form">
           <div class="input-group">
-              <input type="text" name="q" class="form-control" placeholder="Search items..."/>
+              <input type="text" name="q" class="form-control" placeholder="Search product..."/>
               <span class="input-group-btn">
                   <button type='submit' name='seach' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
               </span>
@@ -30,11 +30,12 @@
           <li class="treeview">
               <a href="#">
                   <i class="fa fa-bar-chart-o"></i>
-                  <span>Items</span>
+                  <span>Products</span>
                   <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                  <li><?php echo $UI->link('Stocks', 'Warung/config', '', 'fa fa-angle-double-right') ?></li>
+                  <li><?php echo $UI->link('List product', 'Product/index', '', 'fa fa-angle-double-right') ?></li>
+                  <li><?php echo $UI->link('Product configuration', 'Warung/config', '', 'fa fa-angle-double-right') ?></li>
               </ul>
           </li>
           <li class="treeview">
