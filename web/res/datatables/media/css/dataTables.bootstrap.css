@@ -10,12 +10,13 @@ div.dataTables_length select
  
 div.dataTables_filter label
 {
-  vertical-align: middle;
+  vertical-align: middle;  
 }
  
 div.dataTables_filter
 {
   margin-bottom: 5px !important;
+  float: left; /* edit to make filter inline - AF */
 }
  
 div.dataTables_length
