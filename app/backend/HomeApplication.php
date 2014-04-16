@@ -8,6 +8,10 @@ use PetakUmpet\UI\DataTables;
 
 use PetakUmpet\Database\Accessor;
 
+use PetakUmpet\Form;
+use PetakUmpet\Form\Field;
+use PetakUmpet\Form\Component\TableAdapterForm;
+
 class HomeApplication extends Application {
 
   public function indexAction()
@@ -21,13 +25,24 @@ class HomeApplication extends Application {
 
   public function sourceAction()
   {
-    // $a['aaData'] = array();
-    // for($i=1; $i<20; $i++) {
-    //   $row = array('id' => $i, 'no' => $i, 'nama_orang' => 'AMU-' . $i, 'deskripsi' => 'Sungguh bosan yah ' . (string) ($i*2-4+3));
-    //   $a['aaData'][] = $row;
-    // }
 
-    $dba = new Accessor('userdata');
+    $tablename = 'userdata';
+    $dba = new Accessor($tablename);
+    $form = new TableAdapterForm($tablename, array(), array(), 'x');         
+
+    switch($this->request->get('dtact')) {
+      case 'Add':
+        return $this->renderView('Home/form', array('form' => $form));
+      break;
+      case 'Edit':
+      case 'View':
+        $form->setValuesById($this->request->get('id'));
+        return $this->renderView('Home/form', array('form' => $form));
+      break;
+    }
+    // if (!$this->request->isPost() && $this->request->get('id')) {
+    //   $this->form->setValuesById($this->request->get('id'));
+    // }
 
     $res = $dba->findAll();
     $a['aaData'] = array();

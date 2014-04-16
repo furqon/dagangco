@@ -55,6 +55,9 @@ class RoutingConfig extends RoutingEngine {
       'dashboard' => array(
         self::PAGE => 'Home/dashboard',
       ),
+      'productlist' => array(
+        self::PAGE => 'Product/index',
+      ),
       'configuration' => array(
         self::PAGE => 'Warung/config',
       ),

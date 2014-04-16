@@ -1,3 +1,5 @@
+<?php $T->addJs(array('../res/datatables/extras/TableTools/media/js/TableTools','../res/datatables/extras/TableTools/media/js/ZeroClipboard')) ?>
+
 <?php $T->blockStart('content') ?>
 <aside class="right-side">
     <!-- Content Header (Page header) -->
@@ -15,37 +17,14 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="box box-primary">
-                    <div class="box-header">
-                        <h3 class="box-title">User Data</h3> 
-                    </div>
-                    <div class="box-body" >
+                    <div class="box-body" style="min-height: 400px;">
                         <?php echo $dt; ?>
                     </div>
                 </div>
             </div>
      
-            <div class="col-xs-12">
-                <!-- interactive chart -->
-                <div class="box box-primary">
-                    <div class="box-header">
-                        <i class="fa fa-bar-chart-o"></i>
-                        <h3 class="box-title">Interactive Area Chart</h3> 
-                        <div class="box-tools pull-right">
-                            Real time
-                            <div class="btn-group" id="realtime" data-toggle="btn-toggle">
-                                <button type="button" class="btn btn-default btn-xs active" data-toggle="on">On</button>                                            
-                                <button type="button" class="btn btn-default btn-xs" data-toggle="off">Off</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-body">
-                        <div id="interactive" style="height: 300px;"></div>
-                    </div><!-- /.box-body-->
-                </div><!-- /.box -->
-
-            </div><!-- /.col -->
         </div><!-- /.row -->
     </section><!-- /.content -->
 
