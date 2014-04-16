@@ -3,14 +3,14 @@
 namespace backend;
 
 use PetakUmpet\Application;
-
 use PetakUmpet\UI\DataTables;
-
 use PetakUmpet\Database\Accessor;
 
 use PetakUmpet\Form;
 use PetakUmpet\Form\Field;
 use PetakUmpet\Form\Component\TableAdapterForm;
+
+use PetakUmpet\Request;
 
 class HomeApplication extends Application {
 
@@ -28,7 +28,7 @@ class HomeApplication extends Application {
 
     $tablename = 'userdata';
     $dba = new Accessor($tablename);
-    $form = new TableAdapterForm($tablename, array(), array(), 'x');         
+    $form = new TableAdapterForm($tablename, array(), array(), '?dtact=Save');         
 
     switch($this->request->get('dtact')) {
       case 'Add':
@@ -39,10 +39,20 @@ class HomeApplication extends Application {
         $form->setValuesById($this->request->get('id'));
         return $this->renderView('Home/form', array('form' => $form));
       break;
+      case 'Save':
+        $request = new Request;
+        if ($request->isPost()) {
+          if (($retId = $form->bindValidateSave($request))) {
+            if ($form->isSaveAndAdd($request)) {
+              return $this->renderView('Home/form', array('form' => $form));
+            }
+            $this->session->setFlash('Data is saved.');
+          }
+        }
+        return $this->redirect('backend/home');
+      break;
     }
-    // if (!$this->request->isPost() && $this->request->get('id')) {
-    //   $this->form->setValuesById($this->request->get('id'));
-    // }
+    
 
     $res = $dba->findAll();
     $a['aaData'] = array();
