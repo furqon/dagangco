@@ -1,5 +1,3 @@
-<?php $T->addJs(array('../res/datatables/extras/TableTools/media/js/TableTools','../res/datatables/extras/TableTools/media/js/ZeroClipboard')) ?>
-
 <?php $T->blockStart('content') ?>
 <aside class="right-side">
     <!-- Content Header (Page header) -->
@@ -17,10 +15,23 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <div class="box box-primary">
-                    <div class="box-body" style="min-height: 600px;">
-                        <?php echo $dt; ?>
+                    <div class="box-header">
+                        <h3 class="box-title">User Dataxx</h3> 
+                    </div>
+                    <div class="box-body" >
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="box box-primary">
+                    <div class="box-header">
+                        <h3 class="box-title">User Data Form</h3> 
+                    </div>
+                    <div class="box-body" >
+                        
                     </div>
                 </div>
             </div>

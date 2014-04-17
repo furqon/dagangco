@@ -10,9 +10,4 @@ class HomeApplication extends Application {
   {
     return $this->render();
   }
-
-  public function aboutAction()
-  {
-    return $this->render();
-  }
 }

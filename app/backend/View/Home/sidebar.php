@@ -25,7 +25,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
           <li class="active">
-            <?php echo $UI->link('Dashboard', 'Home/dashboard', '', 'fa fa-dashboard') ?>
+            <?php echo $UI->link('Home', 'Home/index', '', 'fa fa-dashboard') ?>
           </li>
           <li>
             <?php echo $UI->link('Dashboard', 'Home/dashboard', '', 'fa fa-dashboard') ?>
