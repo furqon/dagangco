@@ -6,7 +6,7 @@ use PetakUmpet\Application;
 
 use PetakUmpet\UI\DataTables;
 
-use PetakUmpet\Database\Accessor;
+use PetakUmpet\Pager\DataTablePager;
 
 class HomeApplication extends Application {
 
@@ -14,30 +14,16 @@ class HomeApplication extends Application {
   {
     $dt = new DataTables($this->request);
     $dt->setDataSourceAction('Home/source');
-    $dt->setColumnNames(array('id', 'userid', 'name'));
+    $dt->setColumnNames(array('id', 'userid', 'name', 'status', 'password'));
     $dt->setColumnAlias(array('userid' => 'Id Pengguna', 'name' => 'Nama'));
     return $this->render(array('dt' => $dt));
   }
 
   public function sourceAction()
   {
-    // $a['aaData'] = array();
-    // for($i=1; $i<20; $i++) {
-    //   $row = array('id' => $i, 'no' => $i, 'nama_orang' => 'AMU-' . $i, 'deskripsi' => 'Sungguh bosan yah ' . (string) ($i*2-4+3));
-    //   $a['aaData'][] = $row;
-    // }
+    $pager = new DataTablePager('userdata', array('id', 'userid', 'name', 'status', 'password'), $this->request);
 
-    $dba = new Accessor('userdata');
-
-    $res = $dba->findAll();
-    $a['aaData'] = array();
-
-    foreach ($res as $r) {
-      $a['aaData'][] = $r;
-    }
-
-    echo json_encode($a);
-    exit;
+    return (string) $pager;
   }
 
   public function dashboardAction()
