@@ -51,11 +51,25 @@
           <li class="treeview">
               <a href="#">
                   <i class="fa fa-bar-chart-o"></i>
-                  <span>Suppliers</span>
+                  <span>Partners</span>
                   <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
+                  <li><?php echo $UI->link('Reseller', 'Warung/config', '', 'fa fa-angle-double-right') ?></li>
+                  <li><?php echo $UI->link('Dropshippers', 'Warung/config', '', 'fa fa-angle-double-right') ?></li>
                   <li><?php echo $UI->link('List Suppliers', 'Warung/config', '', 'fa fa-angle-double-right') ?></li>
+              </ul>
+          </li>
+          <li class="treeview">
+              <a href="#">
+                  <i class="fa fa-bar-chart-o"></i>
+                  <span>Socmed Mgmt</span>
+                  <i class="fa fa-angle-left pull-right"></i> <small class="badge pull-right bg-green">new</small>
+              </a>
+              <ul class="treeview-menu">
+                  <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> Facebook</a></li>
+                  <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i> Instagram</a></li>
+                  <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Twitter</a></li>
               </ul>
           </li>
           <li class="treeview">
