@@ -110,7 +110,7 @@ if ($.fn.DataTable.TableTools) {
   // Set the classes that TableTools uses to something suitable for Bootstrap
   // Set the classes that TableTools uses to something suitable for Bootstrap
   $.extend(true, $.fn.DataTable.TableTools.classes, {
-    "container": "DTTT btn-group",
+    "container": "DTTT btn-group pull-right col-md-3",
     "buttons": {
       "normal": "btn btn-default",
       "disabled": "disabled"

@@ -6,7 +6,7 @@
       <div class="header">Sign In</div>
 
       <?php echo $form ; ?>
-
+      
       <div class="margin text-center">
         <p>&nbsp;</p>        
         <span>&copy; 2014 - life2play</span>

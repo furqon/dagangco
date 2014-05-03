@@ -19,6 +19,13 @@
   <link href="<?php echo $T->getResourceUrl('res/datatables/media/css/dataTables.bootstrap.css') ?>" rel="stylesheet">
   <link href="<?php echo $T->getResourceUrl('res/datatables/extras/TableTools/media/css/TableTools.css') ?>" rel="stylesheet">  
   
+  <script src="<?php echo $T->getResourceUrl('js/jquery.min.js') ?>"></script>
+  <script src="<?php echo $T->getResourceUrl('res/datatables/media/js/jquery.dataTables.js') ?>"></script>
+  <script src="<?php echo $T->getResourceUrl('res/datatables/extras/TableTools/media/js/ZeroClipboard.js') ?>"></script>
+  <script src="<?php echo $T->getResourceUrl('res/datatables/extras/TableTools/media/js/TableTools.js') ?>"></script>
+  <script src="<?php echo $T->getResourceUrl('res/datatables/media/js/dataTables.bootstrap.js') ?>"></script>
+  <script src="<?php echo $T->getResourceUrl('js/bootbox.js') ?>"></script>
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -94,6 +101,24 @@
       <?php $T->includeFile("Home/sidebar") ?>
       <?php echo $T->block('content'); ?>
     </div>    
+
+    <aside class="right-side">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <?php echo $T->block('content-header') ; ?>
+          <ol class="breadcrumb">
+            <?php echo $T->block('breadcrumb'); ?>
+          </ol>
+        </section>
+        <!-- Main content -->
+        <section class="content">
+          <?php echo $T->block('content'); ?>
+        </section><!-- /.content -->
+    </aside><!-- /.right-side -->
+
+    </div>
+    <script src="<?php echo $T->getResourceUrl('js/bootstrap.min.js') ?>"></script>
+    <script src="<?php echo $T->getResourceUrl('js/AdminLTE/app.js') ?>"></script>
     
   </body>
 </html>
