@@ -1,4 +1,4 @@
-CREATE TABLE transaction (
+CREATE TABLE admin_transaction (
   id serial,
   warung_id integer,
   name varchar(100),
@@ -8,8 +8,8 @@ CREATE TABLE transaction (
   created_at timestamp,
   created_by integer,
   PRIMARY KEY (id),  
-  FOREIGN KEY (warung_id) REFERENCES warungdata (id),
-  FOREIGN KEY (created_by) REFERENCES clientdata (id)
+  FOREIGN KEY (warung_id) REFERENCES admin_warungdata (id),
+  FOREIGN KEY (created_by) REFERENCES admin_userdata (id)
 );
 
 -- invoice

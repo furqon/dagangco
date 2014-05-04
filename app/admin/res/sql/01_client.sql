@@ -2,48 +2,109 @@
 -- orang itu bikin warung (creator_id)
 -- pembuat warung bisa add rekan (client_warung)
 
-CREATE TABLE clientdata (
+CREATE TABLE admin_userdata (
   id serial,
   userid varchar(25),
   name varchar(100),
   password text,
-  avatar varchar(50),
-  email varchar(50),
+  email varchar(255),
+  address text,
   status varchar(10),
+  is_admin boolean,
+  parent_id integer,
+  PRIMARY KEY (id),
+  FOREIGN KEY (parent_id) REFERENCES admin_userdata (id)
+);
+
+CREATE TABLE admin_roledata (
+  id serial,
+  name varchar(50),
   PRIMARY KEY (id)
 );
 
-insert into clientdata (userid, name, password, email, status) values ('joni', 'Joni Dip', '1', 'joni@joni.com', 'aktif');
-insert into clientdata (userid, name, password, email, status) values ('hasan', 'Hasan Tiro', '1', 'hasan@joni.com', 'aktif');
-
-CREATE TABLE warungdata (
+CREATE TABLE admin_groupdata (
   id serial,
-  creator_id integer,
+  name varchar(50),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE admin_accessdata (
+  id serial,
+  name varchar(255),
+  type varchar(50),
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE admin_user_role (
+  id serial,
+  user_id integer,
+  role_id integer,
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES admin_userdata (id),
+  FOREIGN KEY (role_id) REFERENCES admin_roledata (id)
+);
+
+CREATE TABLE admin_role_group (
+  id serial,
+  role_id integer,
+  group_id integer,
+  PRIMARY KEY (id),
+  FOREIGN KEY (role_id) REFERENCES admin_roledata (id),
+  FOREIGN KEY (group_id) REFERENCES admin_groupdata (id)
+);
+
+CREATE TABLE admin_group_access (
+  id serial,
+  group_id integer,
+  access_id integer,
+  PRIMARY KEY (id),
+  FOREIGN KEY (group_id) REFERENCES admin_groupdata (id),
+  FOREIGN KEY (access_id) REFERENCES admin_accessdata (id)
+);
+
+CREATE TABLE admin_user_group (
+  id serial,
+  user_id integer,
+  group_id integer,
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES admin_userdata (id),
+  FOREIGN KEY (group_id) REFERENCES admin_groupdata (id)
+);
+
+CREATE TABLE admin_user_access (
+  id serial,
+  user_id integer,
+  access_id integer,
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES admin_userdata (id),
+  FOREIGN KEY (access_id) REFERENCES admin_accessdata (id)
+);
+
+
+CREATE TABLE admin_warungdata (
+  id serial,
+  owner_id integer,
   name varchar(100),
   avatar varchar(50),
   status varchar(10),
   --other communication line (whatsap, line, fb, twitter)
   PRIMARY KEY (id),
-  FOREIGN KEY (creator_id) REFERENCES clientdata (id)
+  FOREIGN KEY (owner_id) REFERENCES admin_userdata (id)
 );
 
-insert into warungdata (creator_id, name, status) values (1, 'warung baju sport', 'aktif');
 
 -- warung could have more than 1 admin
-CREATE TABLE client_warung (
+CREATE TABLE admin_warung_pengurus (
   id serial,
-  client_id integer,
   warung_id integer,
+  user_id integer,
   PRIMARY KEY (id),
-  FOREIGN KEY (client_id) REFERENCES clientdata (id),
-  FOREIGN KEY (warung_id) REFERENCES warungdata (id)
+  FOREIGN KEY (warung_id) REFERENCES admin_warungdata (id),
+  FOREIGN KEY (user_id) REFERENCES admin_userdata (id)
 );
 
-insert into client_warung (client_id, warung_id) values (1, 1);
-insert into client_warung (client_id, warung_id) values (2, 1);
-
 -- untuk labeling pengirim di paket, have to be wysiwyg, nice to have
-CREATE TABLE warunglabel (
+CREATE TABLE admin_warung_profile (
   id serial,
   warung_id integer,
   name varchar(100),
@@ -51,12 +112,12 @@ CREATE TABLE warunglabel (
   created_at timestamp,
   created_by integer,
   PRIMARY KEY (id),  
-  FOREIGN KEY (warung_id) REFERENCES warungdata (id),
-  FOREIGN KEY (created_by) REFERENCES clientdata (id)
+  FOREIGN KEY (warung_id) REFERENCES admin_warungdata (id),
+  FOREIGN KEY (created_by) REFERENCES admin_userdata (id)
 );
 
 
-CREATE TABLE warungaccount (
+CREATE TABLE admin_warung_account (
   id serial,
   warung_id integer,
   account_name varchar(100),
@@ -64,8 +125,21 @@ CREATE TABLE warungaccount (
   created_at timestamp,
   created_by integer,
   PRIMARY KEY (id),
-  FOREIGN KEY (warung_id) REFERENCES warungdata (id),
-  FOREIGN KEY (created_by) REFERENCES clientdata (id)
+  FOREIGN KEY (warung_id) REFERENCES admin_warungdata (id),
+  FOREIGN KEY (created_by) REFERENCES admin_userdata (id)
 );
 
-insert into warungaccount (warung_id, account_name, account_number, created_by) values (1, 'Bank Mandiri', '1260002345856985', 1);
+-- DATA 
+insert into admin_userdata (userid, name, password, email, parent_id, status) 
+                    values ('joni', 'Joni Dip', '1', 'joni@joni.com', NULL, 'Aktif');
+insert into admin_userdata (userid, name, password, email, parent_id, status) 
+                    values ('hasan', 'Hasan Tiro', '1', 'hasan@joni.com', 1, 'Aktif'); -- parent set to joni
+insert into admin_warungdata (owner_id, name, status) values (1, 'Warung Baju Sport', 'Aktif');
+insert into admin_warung_pengurus (warung_id, user_id) values (1, 1);
+insert into admin_warung_pengurus (warung_id, user_id) values (1, 2);
+insert into admin_warung_account (warung_id, account_name, account_number, created_by) 
+                    values (1, 'Bank Mandiri', '1260002345856985', 1);
+
+-- TODO, DATA for Access, Group, Role
+
+
