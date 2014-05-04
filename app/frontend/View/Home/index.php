@@ -48,6 +48,7 @@
           <ul style="list-style-type:none;">
             <li># aplikasi kelola dagangan</li>
             <li># aplikasi kelola account</li>
+            <li># manajemen timeline</li>
           </ul>
         </h4>
       </p>

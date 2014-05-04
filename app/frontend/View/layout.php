@@ -43,6 +43,8 @@
         <div class="navbar-right">
           <ul class="nav navbar-nav">            
             <li><a href="#"><i class="glyphicon glyphicon-user"></i> <span>Pricing</span></a></li>
+            <li><a href="#"><i class="glyphicon glyphicon-user"></i> <span>Blog</span></a></li>
+            <li><a href="#"><i class="glyphicon glyphicon-user"></i> <span>Forum</span></a></li>
             <li><a href="#"><i class="glyphicon glyphicon-user"></i> <span>About</span></a></li>
             <li><a href="#"><i class="glyphicon glyphicon-user"></i> <span>Contact</span></a></li>
           </ul>

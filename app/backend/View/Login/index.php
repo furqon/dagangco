@@ -1,7 +1,7 @@
 <?php $T->addCss(array('font-awesome.min', 'AdminLTE')) ?>
-<?php $T->addJs(array('jquery')) ?>
-<?php $T->blockStart('content'); ?>
 
+
+<?php $T->blockStart('content'); ?>
     <div class="form-box" id="login-box">
       <div class="header">Sign In</div>
 
@@ -25,6 +25,5 @@ $(document).ready(function () {
   }
 });
 </script>
-
 <?php $T->blockEnd('content') ; ?>
 

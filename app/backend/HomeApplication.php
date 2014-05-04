@@ -19,9 +19,9 @@ class HomeApplication extends Application {
   public function indexAction()
   {
     $dt = new DataTables($this->request);
-    $dt->setDataSourceAction('Home/source');
-    $dt->setColumnNames(array('id', 'name'));
-    $dt->setColumnAlias(array('name' => 'Nama'));
+    $dt->setDataSourceAction('admin/Home/source');
+    $dt->setColumnNames(array('id', 'userid', 'name'));
+    $dt->setColumnAlias(array('userid' => 'Id Pengguna', 'name' => 'Nama'));
     return $this->render(array('dt' => $dt));
   }
 
@@ -84,6 +84,16 @@ class HomeApplication extends Application {
           }
         }
         return $this->redirect('backend/home');
+      break;
+      case 'Delete':
+        if ($this->readOnly === true) return;
+
+        $dbm = new Model($tableName);
+        if ($dbm->delete(array('id' => $this->request->get('id')))) {
+          return new Response('success');
+        }
+        return new Response('fail', 404);
+        
       break;
     }
     

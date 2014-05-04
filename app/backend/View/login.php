@@ -11,8 +11,7 @@
 
     <title><?php echo $config->getProjectTitle(); ?></title>
 
-    <link href="<?php echo $T->getResourceUrl('css/bootstrap.min.css') ?>" rel="stylesheet">
-    
+    <link href="<?php echo $T->getResourceUrl('css/bootstrap.min.css') ?>" rel="stylesheet">    
     <?php $T->getCss(); ?>
     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -24,10 +23,10 @@
 
   <body class="bg-black">
 
-    <?php $T->block('content'); ?>
-
+    <script src="<?php echo $T->getResourceUrl('js/jquery.min.js') ?>"></script>
+    <script src="<?php echo $T->getResourceUrl('js/bootstrap.min.js') ?>"></script>
     <?php $T->getJs(); ?>
-    <script src="<?php echo $T->getResourceUrl('js/bootstrap.js') ?>"></script>
+    <?php $T->block('content'); ?>
 
   </body>
 </html>
