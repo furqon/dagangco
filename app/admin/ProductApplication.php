@@ -18,8 +18,8 @@ class ProductApplication extends Application {
   {
     $dt = new DataTables($this->request);
     $dt->setDataSourceAction('Product/source');
-    $dt->setColumnNames(array('id', 'name', 'itemtype'));
-    $dt->setColumnAlias(array('name' => 'Produk', 'itemtype' => 'Item'));
+    $dt->setColumnNames(array('id', 'name'));
+    $dt->setColumnAlias(array('name' => 'Produk'));
     return $this->render(array('dt' => $dt));
   }
 
