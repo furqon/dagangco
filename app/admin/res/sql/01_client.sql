@@ -16,6 +16,15 @@ CREATE TABLE admin_userdata (
   FOREIGN KEY (parent_id) REFERENCES admin_userdata (id)
 );
 
+CREATE TABLE admin_user_profile (
+  id serial,
+  user_id integer,
+  address text,
+  email varchar(255),
+  PRIMARY KEY (id),
+  FOREIGN KEY (user_id) REFERENCES admin_userdata (id)
+);
+
 CREATE TABLE admin_roledata (
   id serial,
   name varchar(50),

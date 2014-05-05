@@ -59,7 +59,7 @@ CREATE TABLE backend_user_access (
   FOREIGN KEY (access_id) REFERENCES backend_accessdata (id)
 );
 
-CREATE TABLE backend_event (
+CREATE TABLE event (
   id serial,
   user_id integer,
   application varchar(100),

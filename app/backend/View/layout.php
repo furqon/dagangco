@@ -20,6 +20,8 @@
   <link href="<?php echo $T->getResourceUrl('res/datatables/extras/TableTools/media/css/TableTools.css') ?>" rel="stylesheet">  
   
   <script src="<?php echo $T->getResourceUrl('js/jquery.min.js') ?>"></script>
+  <script src="<?php echo $T->getResourceUrl('js/bootstrap.min.js') ?>"></script>
+  <script src="<?php echo $T->getResourceUrl('js/AdminLTE/app.js') ?>"></script>
   <script src="<?php echo $T->getResourceUrl('res/datatables/media/js/jquery.dataTables.js') ?>"></script>
   <script src="<?php echo $T->getResourceUrl('res/datatables/extras/TableTools/media/js/ZeroClipboard.js') ?>"></script>
   <script src="<?php echo $T->getResourceUrl('res/datatables/extras/TableTools/media/js/TableTools.js') ?>"></script>
@@ -32,19 +34,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
   <![endif]-->
 
-  <script src="<?php echo $T->getResourceUrl('js/jquery.min.js') ?>"></script>
-  <script src="<?php echo $T->getResourceUrl('js/bootstrap.min.js') ?>"></script>
-  <script src="<?php echo $T->getResourceUrl('js/AdminLTE/app.js') ?>"></script>
-  
-  <script src="<?php echo $T->getResourceUrl('res/datatables/media/js/jquery.dataTables.js') ?>"></script>
-  <script src="<?php echo $T->getResourceUrl('res/datatables/media/js/dataTables.bootstrap.js') ?>"></script>    
-  <?php /*
-  <script src="<?php echo $T->getResourceUrl('res/datatables/extras/TableTools/media/js/ZeroClipboard.js') ?>"></script>    
-  <script src="<?php echo $T->getResourceUrl('res/datatables/extras/TableTools/media/js/TableTools.js') ?>"></script>    
-  */ ?>
   <?php $T->getJs() ?>
-  
-  
   </head>
 
   <body class="skin-blue">
@@ -117,8 +107,6 @@
     </aside><!-- /.right-side -->
 
     </div>
-    <script src="<?php echo $T->getResourceUrl('js/bootstrap.min.js') ?>"></script>
-    <script src="<?php echo $T->getResourceUrl('js/AdminLTE/app.js') ?>"></script>
     
   </body>
 </html>

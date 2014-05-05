@@ -19,15 +19,14 @@ class HomeApplication extends Application {
   public function indexAction()
   {
     $dt = new DataTables($this->request);
-    $dt->setDataSourceAction('admin/Home/source');
-    $dt->setColumnNames(array('id', 'userid', 'name'));
-    $dt->setColumnAlias(array('userid' => 'Id Pengguna', 'name' => 'Nama'));
+    $dt->setDataSourceAction('Home/source');
+    $dt->setColumnNames(array('id', 'name'));
     return $this->render(array('dt' => $dt));
   }
 
   public function sourceAction()
   {
-    $tablename = 'accessdata';
+    $tablename = 'backend_accessdata';
 
     $form = new TableAdapterForm($tablename, array(), array(), '?dtact=Save');         
 
@@ -51,40 +50,7 @@ class HomeApplication extends Application {
           }
         }
         return $this->redirect('backend/home');
-    }
-    // default act
-    $pager = new DataTablePager($tablename, array('id', 'name'), $this->request);
-    return (string) $pager;
-
-  }
-
-  public function origSourceAction()
-  {
-    $tablename = 'userdata';
-    $dba = new Accessor($tablename);
-    $form = new TableAdapterForm($tablename, array(), array(), '?dtact=Save');         
-
-    switch($this->request->get('dtact')) {
-      case 'Add':
-        return $this->renderView('Home/form', array('form' => $form));
-      break;
-      case 'Edit':
-      case 'View':
-        $form->setValuesById($this->request->get('id'));
-        return $this->renderView('Home/form', array('form' => $form));
-      break;
-      case 'Save':
-        $request = new Request;
-        if ($request->isPost()) {
-          if (($retId = $form->bindValidateSave($request))) {
-            if ($form->isSaveAndAdd($request)) {
-              return $this->renderView('Home/form', array('form' => $form));
-            }
-            $this->session->setFlash('Data is saved.');
-          }
-        }
-        return $this->redirect('backend/home');
-      break;
+        break;
       case 'Delete':
         if ($this->readOnly === true) return;
 
@@ -93,20 +59,13 @@ class HomeApplication extends Application {
           return new Response('success');
         }
         return new Response('fail', 404);
-        
       break;
+
     }
-    
+    // default act
+    $pager = new DataTablePager($tablename, array('id', 'name'), $this->request);
+    return (string) $pager;
 
-    $res = $dba->findAll();
-    $a['aaData'] = array();
-
-    foreach ($res as $r) {
-      $a['aaData'][] = $r;
-    }
-
-    echo json_encode($a);
-    exit;
   }
 
   public function dashboardAction()
