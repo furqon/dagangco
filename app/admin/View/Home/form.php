@@ -4,8 +4,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Title
-            <small>Title description</small>
+            <?php echo $title ?>
+            <small><?php echo (isset($subtitle)) ? $subtitle : '' ?></small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>

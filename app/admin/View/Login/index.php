@@ -1,5 +1,6 @@
-<?php $T->addCss(array('font-awesome.min', 'AdminLTE')) ?>
+<?php $T->addCss(array('font-awesome.min', 'bootstrap.min', 'AdminLTE')) ?>
 <?php $T->addJs(array('jquery.min')) ?>
+
 <?php $T->blockStart('content'); ?>
 
     <div class="form-box" id="login-box">
@@ -16,6 +17,7 @@
         <button class="btn bg-aqua btn-circle"><i class="fa fa-twitter"></i></button>
         <button class="btn bg-red btn-circle"><i class="fa fa-google-plus"></i></button>
       </div>
+
     </div>
 
 <script type="text/javascript">

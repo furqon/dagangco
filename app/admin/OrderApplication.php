@@ -12,20 +12,20 @@ use PetakUmpet\Form\Component\TableAdapterForm;
 
 use PetakUmpet\Request;
 
-class ProductApplication extends Application {
+class OrderApplication extends Application {
 
   public function indexAction()
-  {
+  {    
     $dt = new DataTables($this->request);
-    $dt->setDataSourceAction('Product/source');
-    $dt->setColumnNames(array('id', 'name'));
+    $dt->setDataSourceAction('Order/source');
+    $dt->setColumnNames(array('id', 'name', 'status'));
     $dt->setColumnAlias(array('name' => 'Produk'));
-    return $this->render(array('dt' => $dt, 'active' => 'product'));
+    return $this->render(array('dt' => $dt, 'active' => 'order'));
   }
 
   public function sourceAction()
   {
-    $tablename = 'admin_itemdata';
+    $tablename = 'admin_transaction';
     $dba = new Accessor($tablename);
     $form = new TableAdapterForm($tablename, array(), array(), '?dtact=Save');         
 

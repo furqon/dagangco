@@ -55,12 +55,22 @@ class RoutingConfig extends RoutingEngine {
       'dashboard' => array(
         self::PAGE => 'Home/dashboard',
       ),
+      #------
       'products' => array(
         self::PAGE => 'Product/index',
       ),
       'productsource' => array(
         self::PAGE => 'Product/source',
       ),
+
+      #------transaction
+      'order' => array(
+        self::PAGE => 'Order/index',
+      ),
+      'ordersource' => array(
+        self::PAGE => 'Order/source',
+      ),
+
       'configuration' => array(
         self::PAGE => 'Warung/config',
       ),
