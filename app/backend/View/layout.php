@@ -89,24 +89,21 @@
 
     <div class="wrapper row-offcanvas row-offcanvas-left">      
       <?php $T->includeFile("Home/sidebar") ?>
-      <?php echo $T->block('content'); ?>
+
+      <aside class="right-side">
+          <!-- Content Header (Page header) -->
+          <section class="content-header">
+            <?php echo $T->block('content-header') ; ?>
+            <ol class="breadcrumb">
+              <?php echo $T->block('breadcrumb'); ?>
+            </ol>
+          </section>
+          <!-- Main content -->
+          <section class="content">
+            <?php echo $T->block('content'); ?>
+          </section><!-- /.content -->
+      </aside><!-- /.right-side -->
     </div>    
-
-    <aside class="right-side">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <?php echo $T->block('content-header') ; ?>
-          <ol class="breadcrumb">
-            <?php echo $T->block('breadcrumb'); ?>
-          </ol>
-        </section>
-        <!-- Main content -->
-        <section class="content">
-          <?php echo $T->block('content'); ?>
-        </section><!-- /.content -->
-    </aside><!-- /.right-side -->
-
-    </div>
     
   </body>
 </html>

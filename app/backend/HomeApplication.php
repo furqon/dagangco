@@ -7,6 +7,8 @@ use PetakUmpet\UI\DataTables;
 
 use PetakUmpet\Pager\DataTablePager;
 use PetakUmpet\Database\Accessor;
+use PetakUmpet\Database\Model;
+use PetakUmpet\Response;
 
 use PetakUmpet\Form;
 use PetakUmpet\Form\Field;
@@ -21,14 +23,15 @@ class HomeApplication extends Application {
     $dt = new DataTables($this->request);
     $dt->setDataSourceAction('Home/source');
     $dt->setColumnNames(array('id', 'name'));
+
     return $this->render(array('dt' => $dt));
   }
 
   public function sourceAction()
   {
-    $tablename = 'backend_accessdata';
+    $tableName = 'backend_accessdata';
 
-    $form = new TableAdapterForm($tablename, array(), array(), '?dtact=Save');         
+    $form = new TableAdapterForm($tableName, array(), array(), '?dtact=Save');         
 
     switch($this->request->get('dtact')) {
       case 'Add':
@@ -52,8 +55,6 @@ class HomeApplication extends Application {
         return $this->redirect('backend/home');
         break;
       case 'Delete':
-        if ($this->readOnly === true) return;
-
         $dbm = new Model($tableName);
         if ($dbm->delete(array('id' => $this->request->get('id')))) {
           return new Response('success');
@@ -63,7 +64,7 @@ class HomeApplication extends Application {
 
     }
     // default act
-    $pager = new DataTablePager($tablename, array('id', 'name'), $this->request);
+    $pager = new DataTablePager($tableName, array('id', 'name'), $this->request);
     return (string) $pager;
 
   }
