@@ -94,6 +94,9 @@ class RoutingConfig extends RoutingEngine {
       'socmed' => array(
         self::PAGE => 'Setting/socmed',
       ),
+      'invoice' => array(
+        self::PAGE => 'Setting/invoice',
+      ),
 
       'configuration' => array(
         self::PAGE => 'Warung/config',

@@ -77,6 +77,7 @@
               </a>
               <ul class="treeview-menu">
                   <li><?php echo $UI->link('Configuration', 'Setting/index', '', 'fa fa-angle-double-right') ?></li>
+                  <li><?php echo $UI->link('Invoice', 'Setting/invoice', '', 'fa fa-angle-double-right') ?></li>
                   <li><?php echo $UI->link('Users', 'User/index', '', 'fa fa-angle-double-right') ?></li>
               </ul>
           </li>
