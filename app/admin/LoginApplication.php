@@ -24,8 +24,11 @@ class LoginApplication extends Application {
           $this->session->set('username', $user->getName());
           $this->session->set('userid', $user->getUserid());
           $this->session->set('warungid', $this->getWarungid( $user->getId() ));
+          // $this->session->set('avatar', $this->getAvatar( $user->getId() ));
           $this->session->setAuthenticated(true);          
           // authenticated, go to index
+
+          // if have more than one warung should go to transition page and select warung first
           $this->redirect('Home/dashboard');
         }
         // failed login

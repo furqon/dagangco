@@ -23,7 +23,69 @@
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tab_1" style="min-height: 400px;">
-                                    <p></p>
+                                    <p>
+                                        <div class="col-md-6">
+                            <!-- general form elements -->
+                                            <div class="box box-primary">
+                                        
+                                                <form role="form">
+                                                    <div class="box-body">
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Alamat email</label>
+                                                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputPassword1">Nama warung</label>
+                                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nama warung">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputPassword1">Mata uang</label>
+                                                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Mata uang">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputFile">Email footer</label>
+                                                            <textarea class="form-control" rows="3" placeholder="Enter ...">Terima kasih, 
+-- warung kopi
+                                                            </textarea>
+                                                        </div>
+                                                    </div><!-- /.box-body -->
+
+                                                    <div class="box-footer">
+                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                            <!-- general form elements -->
+                                            <div class="box box-primary">
+                                        
+                                                <form role="form">
+                                                    <div class="box-body">
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Bank account</label>
+                                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Bank">
+                                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Account number">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Facebook account</label>
+                                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Facebook account">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Twitter account</label>
+                                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Facebook account">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Instagram account</label>
+                                                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Instagram account">
+                                                        </div>
+                                                    </div><!-- /.box-body -->
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </p>
                                 </div>
                                 <div class="tab-pane" id="tab_2">
                                     <p></p>
