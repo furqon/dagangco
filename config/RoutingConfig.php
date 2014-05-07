@@ -71,6 +71,30 @@ class RoutingConfig extends RoutingEngine {
         self::PAGE => 'Order/source',
       ),
 
+      #------customer
+      'customer' => array(
+        self::PAGE => 'Customer/index',
+      ),
+      'customersource' => array(
+        self::PAGE => 'Customer/source',
+      ),
+
+      #------partner
+      'partner' => array(
+        self::PAGE => 'Partner/index',
+      ),
+      'partnersource' => array(
+        self::PAGE => 'Partner/source',
+      ),
+
+      #------setting
+      'setting' => array(
+        self::PAGE => 'Setting/index',
+      ),
+      'socmed' => array(
+        self::PAGE => 'Setting/socmed',
+      ),
+
       'configuration' => array(
         self::PAGE => 'Warung/config',
       ),

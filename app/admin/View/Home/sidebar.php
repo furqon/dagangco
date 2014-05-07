@@ -24,7 +24,7 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-          <li <?php echo (!isset($active) || $active == 'dashboard') ? 'class="active"' : '' ?>><?php echo $UI->link('Dashboard', 'Home/dashboard', '', 'fa fa-dashboard') ?></li>
+          <li <?php echo ($active == '' || $active == 'dashboard') ? 'class="active"' : '' ?>><?php echo $UI->link('Dashboard', 'Home/dashboard', '', 'fa fa-dashboard') ?></li>
           <li <?php echo (isset($active) && $active == 'order') ? 'class="active"' : '' ?>><?php echo $UI->link('Order', 'Order/index', '', 'fa fa-dropbox') ?></li>
           <li class="treeview <?php echo (isset($active) && $active == 'product') ? 'active' : '' ?>">
               <a href="#">
@@ -34,7 +34,7 @@
               </a>
               <ul class="treeview-menu">
                   <li><?php echo $UI->link('List product', 'Product/index', '', 'fa fa-angle-double-right') ?></li>
-                  <li><?php echo $UI->link('Product configuration', 'Warung/config', '', 'fa fa-angle-double-right') ?></li>
+                  <!-- <li><?php echo $UI->link('Product configuration', 'Warung/config', '', 'fa fa-angle-double-right') ?></li> -->
               </ul>
           </li>
           <li class="treeview <?php echo (isset($active) && $active == 'customer') ? 'active' : '' ?>">
@@ -44,7 +44,7 @@
                   <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                  <li><?php echo $UI->link('List customers', 'Warung/config', '', 'fa fa-angle-double-right') ?></li>
+                  <li><?php echo $UI->link('List customers', 'Customer/index', '', 'fa fa-angle-double-right') ?></li>
               </ul>
           </li>
           <li class="treeview <?php echo (isset($active) && $active == 'partner') ? 'active' : '' ?>">
@@ -54,7 +54,7 @@
                   <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                  <li><?php echo $UI->link('Reseller', 'Warung/config', '', 'fa fa-angle-double-right') ?></li>
+                  <li><?php echo $UI->link('Reseller', 'Partner/index', '', 'fa fa-angle-double-right') ?></li>
                   <li><?php echo $UI->link('Dropshippers', 'Warung/config', '', 'fa fa-angle-double-right') ?></li>
                   <li><?php echo $UI->link('List Suppliers', 'Warung/config', '', 'fa fa-angle-double-right') ?></li>
               </ul>
@@ -66,9 +66,7 @@
                   <i class="fa fa-angle-left pull-right"></i> <small class="badge pull-right bg-green">new</small>
               </a>
               <ul class="treeview-menu">
-                  <li><a href="pages/charts/morris.html"><i class="fa fa-angle-double-right"></i> Facebook</a></li>
-                  <li><a href="pages/charts/flot.html"><i class="fa fa-angle-double-right"></i> Instagram</a></li>
-                  <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Twitter</a></li>
+                  <li><?php echo $UI->link('Account setting', 'Setting/socmed', '', 'fa fa-angle-double-right') ?></li>
               </ul>
           </li>
           <li class="treeview <?php echo (isset($active) && $active == 'setting') ? 'active' : '' ?>">
@@ -78,10 +76,8 @@
                   <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                  <li><?php echo $UI->link('Configuration', 'Warung/config', '', 'fa fa-angle-double-right') ?></li>
-                  <li><?php echo $UI->link('Bank account', 'Warung/config', '', 'fa fa-angle-double-right') ?></li>
-                  <li><?php echo $UI->link('Invoice template', 'Warung/config', '', 'fa fa-angle-double-right') ?></li>
-                  <li><?php echo $UI->link('Users', 'Warung/config', '', 'fa fa-angle-double-right') ?></li>
+                  <li><?php echo $UI->link('Configuration', 'Setting/index', '', 'fa fa-angle-double-right') ?></li>
+                  <li><?php echo $UI->link('Users', 'User/index', '', 'fa fa-angle-double-right') ?></li>
               </ul>
           </li>
       </ul>
