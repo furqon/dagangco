@@ -25,10 +25,10 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
           <li <?php echo (!isset($active) || $active == 'dashboard') ? 'class="active"' : '' ?>><?php echo $UI->link('Dashboard', 'Home/dashboard', '', 'fa fa-dashboard') ?></li>
-          <li <?php echo (isset($active) && $active == 'order') ? 'class="active"' : '' ?>><?php echo $UI->link('Order', 'Order/index', '', 'fa fa-dashboard') ?></li>
+          <li <?php echo (isset($active) && $active == 'order') ? 'class="active"' : '' ?>><?php echo $UI->link('Order', 'Order/index', '', 'fa fa-dropbox') ?></li>
           <li class="treeview <?php echo (isset($active) && $active == 'product') ? 'active' : '' ?>">
               <a href="#">
-                  <i class="fa fa-bar-chart-o"></i>
+                  <i class="fa fa-shopping-cart"></i>
                   <span>Products</span>
                   <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -39,7 +39,7 @@
           </li>
           <li class="treeview <?php echo (isset($active) && $active == 'customer') ? 'active' : '' ?>">
               <a href="#">
-                  <i class="fa fa-bar-chart-o"></i>
+                  <i class="fa fa-users"></i>
                   <span>Customers</span>
                   <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -49,7 +49,7 @@
           </li>
           <li class="treeview <?php echo (isset($active) && $active == 'partner') ? 'active' : '' ?>">
               <a href="#">
-                  <i class="fa fa-bar-chart-o"></i>
+                  <i class="fa fa-users"></i>
                   <span>Partners</span>
                   <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -61,7 +61,7 @@
           </li>
           <li class="treeview <?php echo (isset($active) && $active == 'socmed') ? 'active' : '' ?>">
               <a href="#">
-                  <i class="fa fa-bar-chart-o"></i>
+                  <i class="fa fa-bullhorn"></i>
                   <span>Socmed Mgmt</span>
                   <i class="fa fa-angle-left pull-right"></i> <small class="badge pull-right bg-green">new</small>
               </a>
@@ -73,7 +73,7 @@
           </li>
           <li class="treeview <?php echo (isset($active) && $active == 'setting') ? 'active' : '' ?>">
               <a href="#">
-                  <i class="fa fa-bar-chart-o"></i>
+                  <i class="fa fa-cogs"></i>
                   <span>Settings</span>
                   <i class="fa fa-angle-left pull-right"></i>
               </a>

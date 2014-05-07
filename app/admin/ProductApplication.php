@@ -33,19 +33,19 @@ class ProductApplication extends Application {
 
     switch($this->request->get('dtact')) {
       case 'Add':
-        return $this->renderView('Home/form', array('form' => $form, 'title' => $title));
+        return $this->renderView('Home/form', array('form' => $form, 'title' => $title, 'active' => strtolower($title)));
       break;
       case 'Edit':
       case 'View':
         $form->setValuesById($this->request->get('id'));
-        return $this->renderView('Home/form', array('form' => $form, 'title' => $title));
+        return $this->renderView('Home/form', array('form' => $form, 'title' => $title, 'active' => strtolower($title)));
       break;
       case 'Save':
         $request = new Request;
         if ($request->isPost()) {
           if (($retId = $form->bindValidateSave($request))) {
             if ($form->isSaveAndAdd($request)) {
-              return $this->renderView('Home/form', array('form' => $form, 'title' => $title));
+              return $this->renderView('Home/form', array('form' => $form, 'title' => $title, 'active' => strtolower($title)));
             }
             $this->session->setFlash('Data is saved.');
           }
