@@ -94,7 +94,7 @@
 
 
     <div class="wrapper row-offcanvas row-offcanvas-left">      
-      <?php $T->includeFile("Home/sidebar") ?>
+      <?php $T->includeFile("Home/sidebar", array('active' => $active)) ?>
       <!-- echo $T->ajaxBlock('testBlock', 'Home/index'); -->
       <?php echo $T->block('content'); ?>
     </div>

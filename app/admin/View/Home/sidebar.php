@@ -37,7 +37,7 @@
                   <li><?php echo $UI->link('Product configuration', 'Warung/config', '', 'fa fa-angle-double-right') ?></li>
               </ul>
           </li>
-          <li class="treeview">
+          <li class="treeview <?php echo (isset($active) && $active == 'customer') ? 'active' : '' ?>">
               <a href="#">
                   <i class="fa fa-bar-chart-o"></i>
                   <span>Customers</span>
@@ -47,7 +47,7 @@
                   <li><?php echo $UI->link('List customers', 'Warung/config', '', 'fa fa-angle-double-right') ?></li>
               </ul>
           </li>
-          <li class="treeview">
+          <li class="treeview <?php echo (isset($active) && $active == 'partner') ? 'active' : '' ?>">
               <a href="#">
                   <i class="fa fa-bar-chart-o"></i>
                   <span>Partners</span>
@@ -59,7 +59,7 @@
                   <li><?php echo $UI->link('List Suppliers', 'Warung/config', '', 'fa fa-angle-double-right') ?></li>
               </ul>
           </li>
-          <li class="treeview">
+          <li class="treeview <?php echo (isset($active) && $active == 'socmed') ? 'active' : '' ?>">
               <a href="#">
                   <i class="fa fa-bar-chart-o"></i>
                   <span>Socmed Mgmt</span>
@@ -71,7 +71,7 @@
                   <li><a href="pages/charts/inline.html"><i class="fa fa-angle-double-right"></i> Twitter</a></li>
               </ul>
           </li>
-          <li class="treeview">
+          <li class="treeview <?php echo (isset($active) && $active == 'setting') ? 'active' : '' ?>">
               <a href="#">
                   <i class="fa fa-bar-chart-o"></i>
                   <span>Settings</span>
