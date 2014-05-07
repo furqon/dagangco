@@ -3,6 +3,7 @@
 namespace admin;
 
 use PetakUmpet\Application;
+use PetakUmpet\Singleton;
 use PetakUmpet\Response;
 use admin\AppUser;
 
@@ -22,7 +23,8 @@ class LoginApplication extends Application {
           $this->session->setUser($user);
           $this->session->set('username', $user->getName());
           $this->session->set('userid', $user->getUserid());
-          $this->session->setAuthenticated(true);
+          $this->session->set('warungid', $this->getWarungid( $user->getId() ));
+          $this->session->setAuthenticated(true);          
           // authenticated, go to index
           $this->redirect('Home/dashboard');
         }
@@ -32,5 +34,15 @@ class LoginApplication extends Application {
     }
 
     return $this->render(array('form' => $form), 'login');
+  }
+
+  public function getWarungid($userid) { 
+
+    $db = Singleton::acquire('\\PetakUmpet\\Database');
+
+    $query = "SELECT warung_id FROM admin_warung_pengurus WHERE user_id = ?";
+    $warungid = $db->queryFetchOne($query, array($userid) );
+
+    return $warungid;
   }
 }

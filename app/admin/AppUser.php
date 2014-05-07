@@ -19,6 +19,4 @@ class AppUser extends User {
  
     $this->setAccessQuery($accessQuery);
   } 
-
-
 }
