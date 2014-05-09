@@ -31,10 +31,10 @@ class LoginFormFormatter extends BaseFormFormatter {
 
     $this->fieldHelpTagFormat = '<span class="help-block">%s</span>';
 
-    $this->actionStart = '<div class="footer">';
+    $this->actionStart = '</div><div class="footer">';
     $this->actionEnd = '<p><a href="#">I forgot my password</a></p>            
             <a href="register.html" class="text-center">Register a new membership</a>
-        </div>';
+        </div></div>';
   }
 
 

@@ -1,15 +1,4 @@
 <?php $T->blockStart('content') ?>
-<aside class="right-side">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            Social media channel
-            <small>Konfigurasi</small>
-        </h1>
-    </section>
-
-    <!-- Main content -->
-    <section class="content">
         <div class="row">
             <div class="col-md-12">
                 <div class="box box-primary">
@@ -37,9 +26,5 @@
                 </div>
             </div>
      
-        </div><!-- /.row -->
-    </section><!-- /.content -->
-
-</aside><!-- /.right-side -->
-
+        </div>
 <?php $T->blockEnd('content') ?>

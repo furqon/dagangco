@@ -1,7 +1,5 @@
 <aside class="left-side sidebar-offcanvas">
-  <!-- sidebar: style can be found in sidebar.less -->
   <section class="sidebar">
-      <!-- Sidebar user panel -->
       <div class="user-panel">
           <div class="pull-left image">
               <img src="<?php echo $T->getResourceUrl('avatar/furqon.png') ?>" class="img-circle" alt="User Image" />
@@ -21,8 +19,7 @@
               </span>
           </div>
       </form>
-      <!-- /.search form -->
-      <!-- sidebar menu: : style can be found in sidebar.less -->
+      
       <ul class="sidebar-menu">
           <li class="active">
             <?php echo $UI->link('Home', 'Home/index', '', 'fa fa-dashboard') ?>

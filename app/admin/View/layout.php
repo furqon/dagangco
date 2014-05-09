@@ -19,22 +19,21 @@
   <link href="<?php echo $T->getResourceUrl('res/datatables/media/css/dataTables.bootstrap.css') ?>" rel="stylesheet">
   <link href="<?php echo $T->getResourceUrl('res/datatables/extras/TableTools/media/css/TableTools.css') ?>" rel="stylesheet">  
   
+  <script src="<?php echo $T->getResourceUrl('js/jquery.min.js') ?>"></script>
+  <script src="<?php echo $T->getResourceUrl('js/bootstrap.min.js') ?>"></script>
+  <script src="<?php echo $T->getResourceUrl('js/AdminLTE/app.js') ?>"></script>
+  <script src="<?php echo $T->getResourceUrl('res/datatables/media/js/jquery.dataTables.js') ?>"></script>
+  <script src="<?php echo $T->getResourceUrl('res/datatables/extras/TableTools/media/js/ZeroClipboard.js') ?>"></script>
+  <script src="<?php echo $T->getResourceUrl('res/datatables/extras/TableTools/media/js/TableTools.js') ?>"></script>
+  <script src="<?php echo $T->getResourceUrl('res/datatables/media/js/dataTables.bootstrap.js') ?>"></script>
+  <script src="<?php echo $T->getResourceUrl('js/bootbox.js') ?>"></script>
+
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
   <![endif]-->
 
-  <script src="<?php echo $T->getResourceUrl('js/jquery.min.js') ?>"></script>
-  <script src="<?php echo $T->getResourceUrl('js/bootstrap.min.js') ?>"></script>
-  <script src="<?php echo $T->getResourceUrl('js/AdminLTE/app.js') ?>"></script>
-  
-  <script src="<?php echo $T->getResourceUrl('res/datatables/media/js/jquery.dataTables.js') ?>"></script>
-  <script src="<?php echo $T->getResourceUrl('res/datatables/media/js/dataTables.bootstrap.js') ?>"></script>    
-  <?php /*
-  <script src="<?php echo $T->getResourceUrl('res/datatables/extras/TableTools/media/js/ZeroClipboard.js') ?>"></script>    
-  <script src="<?php echo $T->getResourceUrl('res/datatables/extras/TableTools/media/js/TableTools.js') ?>"></script>    
-  */ ?>
   <?php $T->getJs() ?>
   </head>
 
@@ -56,11 +55,7 @@
         <div class="navbar-right">
           <ul class="nav navbar-nav">
               
-            <li class="dropdown messages-menu">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-question-circle"></i>
-              </a>
-            </li>
+              <!-- User Account: style can be found in dropdown.less -->
             <li class="dropdown user user-menu">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="glyphicon glyphicon-user"></i>
@@ -90,16 +85,18 @@
         </div>
       </nav>
     </header>
-    <!-- end header -->
-
+    <!-- end header -->    
 
     <div class="wrapper row-offcanvas row-offcanvas-left">      
       <?php $T->includeFile("Home/sidebar", array('active' => (isset($active) ? $active : ''))) ?>
-      <!-- echo $T->ajaxBlock('testBlock', 'Home/index'); -->
-      <?php echo $T->block('content'); ?>
-    </div>
-    <script src="<?php echo $T->getResourceUrl('js/bootstrap.min.js') ?>"></script>
-    <script src="<?php echo $T->getResourceUrl('js/AdminLTE/app.js') ?>"></script>
+
+      <aside class="right-side">              
+          <?php $T->includeFile("Home/header", array()) ?>
+          <section class="content">
+            <?php echo $T->block('content'); ?>
+          </section>
+      </aside>
+    </div>    
     
   </body>
 </html>

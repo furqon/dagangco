@@ -1,15 +1,5 @@
 <?php $T->blockStart('content') ?>
-<aside class="right-side">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            Settings
-            <small>Konfigurasi warung</small>
-        </h1>
-    </section>
 
-    <!-- Main content -->
-    <section class="content">
         <div class="row">
 
             <section class="content invoice">                    
@@ -127,8 +117,5 @@
             </section>
      
         </div><!-- /.row -->
-    </section><!-- /.content -->
-
-</aside><!-- /.right-side -->
 
 <?php $T->blockEnd('content') ?>
