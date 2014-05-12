@@ -149,6 +149,39 @@ insert into admin_warung_pengurus (warung_id, user_id) values (1, 2);
 insert into admin_warung_account (warung_id, account_name, account_number, created_by) 
                     values (1, 'Bank Mandiri', '1260002345856985', 1);
 
+
+
 -- TODO, DATA for Access, Group, Role
+INSERT INTO admin_accessdata (name) VALUES ('Admin/index');
+INSERT INTO admin_accessdata (name) VALUES ('Customer/index');
+INSERT INTO admin_accessdata (name) VALUES ('Customer/source');
+INSERT INTO admin_accessdata (name) VALUES ('Home/index');
+INSERT INTO admin_accessdata (name) VALUES ('Home/dashboard');
+INSERT INTO admin_accessdata (name) VALUES ('Login/index');
+INSERT INTO admin_accessdata (name) VALUES ('Logout/index');
+INSERT INTO admin_accessdata (name) VALUES ('Order/index');
+INSERT INTO admin_accessdata (name) VALUES ('Order/source');
+INSERT INTO admin_accessdata (name) VALUES ('Partner/index');
+INSERT INTO admin_accessdata (name) VALUES ('Partner/source');
+INSERT INTO admin_accessdata (name) VALUES ('Product/index');
+INSERT INTO admin_accessdata (name) VALUES ('Product/source');
+INSERT INTO admin_accessdata (name) VALUES ('Setting/index');
+INSERT INTO admin_accessdata (name) VALUES ('Setting/invoice');
+INSERT INTO admin_accessdata (name) VALUES ('Setting/socmed');
+INSERT INTO admin_accessdata (name) VALUES ('User/profile');
+INSERT INTO admin_accessdata (name) VALUES ('User/noAccess');
+INSERT INTO admin_accessdata (name) VALUES ('Warung/config');
 
 
+INSERT INTO admin_groupdata(name) VALUES ('Admin');
+INSERT INTO admin_roledata(name) VALUES ('Admin Role');
+INSERT INTO admin_group_access (group_id, access_id) 
+  SELECT g.id, a.id FROM admin_groupdata g, admin_accessdata a WHERE g.name = 'Admin';
+
+INSERT INTO admin_role_group (role_id, group_id)
+  SELECT r.id, g.id FROM admin_roledata r, admin_groupdata g 
+    WHERE r.name = 'Admin Role' AND g.name = 'Admin';
+
+INSERT INTO admin_user_role (user_id, role_id) 
+  SELECT u.id, r.id FROM admin_userdata u, admin_roledata r 
+    WHERE u.userid = 'joni' AND r.name = 'Admin Role';

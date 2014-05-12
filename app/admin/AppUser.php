@@ -13,8 +13,9 @@ class AppUser extends User {
 
     $accessQuery = "SELECT a.name FROM admin_userdata u "
             . "JOIN admin_user_role ur ON u.id = ur.user_id "
-            . "JOIN admin_role_access ra ON ra.role_id = ur.role_id "
-            . "JOIN admin_accessdata a ON ra.access_id = a.id "
+            . "JOIN admin_role_group rg ON rg.role_id = ur.role_id "
+            . "JOIN admin_group_access ga ON ga.group_id = rg.group_id "
+            . "JOIN admin_accessdata a ON ga.access_id = a.id "
             . "WHERE u.userid = ?" ;
  
     $this->setAccessQuery($accessQuery);
